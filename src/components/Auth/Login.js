@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import axios from '../../api/axiosConfig';
-import { setToken } from '../../utils/auth';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -19,7 +18,6 @@ const Login = () => {
         console.log(response.data.data);
         
         const { access, refresh } = response.data.data.token;
-        alert(access)
         localStorage.setItem('access', access);
         localStorage.setItem('refresh', refresh);
         navigate('/dashboard');
