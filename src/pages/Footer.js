@@ -1,22 +1,21 @@
-import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+
 
 function Footer() {
-  const location = useLocation();
-  const navigate = useNavigate();
 
-  const isAuthenticated = !!localStorage.getItem('access');
-  const isDashboardPath = location.pathname.startsWith('/dashboard') || location.pathname.startsWith('/tasks');
-
-  const handleLogout = () => {
-    localStorage.removeItem('access');
-    localStorage.removeItem('refresh');
-    navigate('/login');
-  };
 
   return (
     <footer className="bg-gray-900 text-white text-center p-4">
-      @2025
+      <p>
+    © 2025 <span className="font-semibold">Akhil</span> |{' '}
+    <a
+      href="https://www.linkedin.com/in/akhil-murali-v-0a00251b6/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-400 hover:underline"
+    >
+      LinkedIn
+    </a>
+  </p>
     </footer>
   );
 }
